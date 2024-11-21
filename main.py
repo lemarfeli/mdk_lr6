@@ -36,6 +36,7 @@ def main():
     user1.borrow_book(book1)
     user1.borrow_book(book1)
 
-
+    # Сохраняем данные библиотеки в файл
+    library.save_to_file("library_data.json")
 if __name__ == "__main__":
     main()
