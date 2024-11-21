@@ -21,4 +21,11 @@ class Book:
 
     def return_book(self):
         self.available = True
+    
+    def to_dict(self):
+        return self.__dict__
+
+    @staticmethod
+    def from_dict(data):
+        return Book(**data)
 

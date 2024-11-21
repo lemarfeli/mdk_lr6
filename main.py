@@ -19,6 +19,11 @@ def main():
 
     # Список книг
     library.list_books()
+    # Поиск книг по автору
+    print("\nBooks by George Orwell:")
+    books_by_orwell = library.find_books_by_author("George Orwell")
+    for book in books_by_orwell:
+        print(f" - {book}")
 
     # Пользователь берет книгу
     user1.borrow_book(book1)
@@ -35,6 +40,9 @@ def main():
     # Попытка взять недоступную книгу
     user1.borrow_book(book1)
     user1.borrow_book(book1)
+    
+        # Генерация отчета
+    library.generate_report()
 
     # Сохраняем данные библиотеки в файл
     library.save_to_file("library_data.json")
