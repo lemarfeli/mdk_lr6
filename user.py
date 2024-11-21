@@ -27,3 +27,15 @@ class User:
                 print(f" - {book}")
         else:
             print(f"{self.name} has not borrowed any books.")
+ def to_dict(self):
+        return {
+            "name": self.name,
+            "user_id": self.user_id,
+            "borrowed_books": [book.to_dict() for book in self.borrowed_books]
+        }
+
+    @staticmethod
+    def from_dict(data):
+        user = User(data["name"], data["user_id"])
+        user.borrowed_books = [Book.from_dict(book) for book in data["borrowed_books"]]
+        return user
