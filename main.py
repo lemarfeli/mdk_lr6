@@ -36,6 +36,8 @@ def main():
     user1.borrow_book(book1)
     user1.borrow_book(book1)
 
+    # Генерация отчета
+    library.generate_report()
 
 if __name__ == "__main__":
     main()
